@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -16,7 +17,27 @@
 					<div id="intro">
 						<h1>Gabe Nuñez<br />
 						Portfolio</h1>
-						<p>Full-stack Engineer specializing in Angular, React, Java, and Ruby on Rails. Past experience in financial services and team leadership.</p>
+						<p id="bio">Loading bio...</p>
+
+						<script>
+							$(document).ready(function() {
+								$.ajax({
+									url: 'https://api.github.com/users/gabrielcnunez',
+									type: 'GET',
+									headers: {
+										'X-GitHub-Api-Version': '2022-11-28',
+										'User-Agent': 'portfolio',
+										'Accept': 'application/json'
+									},
+									success: function(data) {
+										$('#bio').text(data.bio);
+									},
+									error: function() {
+										$('#bio').text('Error loading bio. Please try again later.');
+									}
+								});
+							});
+						</script>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
@@ -209,6 +230,7 @@
 			</div>
 
 		<!-- Scripts -->
+			
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>

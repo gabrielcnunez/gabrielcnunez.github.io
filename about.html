@@ -40,11 +40,9 @@
 							<section class="post">
 								<header class="major">
 									<!-- <span class="date">April 25, 2017</span> -->
-									<h1>This is a<br />
-									Generic Page</h1>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
+									<h1>Gabe Nuñez<br />
+									Software Developer</h1>
+									<p id="bio">Loading bio...</p>
 								</header>
 								<div class="image main"><img id="avatar" src="" /></div>
 
@@ -59,17 +57,19 @@
 												'Accept': 'application/json'
 											},
 											success: function(data) {
-												$('#avatar').attr('src', data.avatar_url);
+												$('#avatar').attr('src', data.avatar_url)
+												$('#bio').text(data.bio)
 											},
 											error: function() {
-												$('#avatar').attr('alt', 'Error loading avatar.');
+												$('#avatar').attr('alt', 'Error loading avatar.')
+												$('#bio').text('Error loading bio. Please try again later.')
 											}
-										});
-									});
+										})
+									})
 								</script>
 
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
+								<p>My journey into software engineering was anything but traditional. After studying music in college and spending 16 years in the mortgage industry, I realized I wanted to take on a more analytical, problem-solving role. A friend suggested I explore software development, and after some thought, it felt like the perfect fit. I decided to make a career shift, enrolling in the Turing School of Software & Design, followed by a Fast Track program to further develop my skills.</p>
+								<p>Since then, I’ve specialized in full-stack development, gaining hands-on experience with Ruby on Rails, Java, JavaScript, and more. From contributing to open-source projects to working on a MERN stack app at a startup, I’ve grown as a developer through real-world problem-solving. Outside of coding, I sing with the Tucson Symphony Orchestra, follow college sports, and love cooking and traveling with my wife. My experiences have shaped me into a creative, well-rounded developer ready for new challenges.</p>
 							</section>
 
 					</div>

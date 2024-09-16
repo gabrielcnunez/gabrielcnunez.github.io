@@ -1,145 +1,208 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Gabe Nuñez | About Me</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+  <head>
+    <title>Gabe Nuñez | About Me</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html" class="logo">Gabe Nuñez</a>
+      </header>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Gabe Nuñez</a>
-					</header>
-
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html#header">Projects</a></li>
-							<li class="active"><a href="about.html">About Me</a></li>
-							<!-- <li><a href="elements.html">Elements Reference</a></li> -->
-						</ul>
-						<ul class="icons">
-							<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="index.html#header">Projects</a></li>
+          <li class="active"><a href="about.html">About Me</a></li>
+          <!-- <li><a href="elements.html">Elements Reference</a></li> -->
+        </ul>
+        <ul class="icons">
+          <!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-							<li><a href="https://www.linkedin.com/in/gabriel-nunez-az/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/gabrielcnunez" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/gabriel-nunez-az/"
+              target="_blank"
+              class="icon brands fa-linkedin"
+              ><span class="label">LinkedIn</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/gabrielcnunez"
+              target="_blank"
+              class="icon brands fa-github"
+              ><span class="label">GitHub</span></a
+            >
+          </li>
+        </ul>
+      </nav>
 
-				<!-- Main -->
-					<div id="main">
+      <!-- Main -->
+      <div id="main">
+        <!-- Post -->
+        <section class="post">
+          <header class="major">
+            <!-- <span class="date">April 25, 2017</span> -->
+            <h1>
+              Gabe Nuñez<br />
+              Software Developer
+            </h1>
+            <p id="bio">Loading bio...</p>
+          </header>
+          <div class="image main"><img id="avatar" src="" /></div>
 
-						<!-- Post -->
-							<section class="post">
-								<header class="major">
-									<!-- <span class="date">April 25, 2017</span> -->
-									<h1>Gabe Nuñez<br />
-									Software Developer</h1>
-									<p id="bio">Loading bio...</p>
-								</header>
-								<div class="image main"><img id="avatar" src="" /></div>
+          <script>
+            $(document).ready(function () {
+              $.ajax({
+                url: "https://api.github.com/users/gabrielcnunez",
+                type: "GET",
+                headers: {
+                  "X-GitHub-Api-Version": "2022-11-28",
+                  "User-Agent": "portfolio",
+                  Accept: "application/json",
+                },
+                success: function (data) {
+                  $("#avatar").attr("src", data.avatar_url)
+                  $("#bio").text(data.bio)
+                },
+                error: function () {
+                  $("#avatar").attr("alt", "Error loading avatar.")
+                  $("#bio").text("Error loading bio. Please try again later.")
+                },
+              })
+            })
+          </script>
 
-								<script>
-									$(document).ready(function() {
-										$.ajax({
-											url: 'https://api.github.com/users/gabrielcnunez',
-											type: 'GET',
-											headers: {
-												'X-GitHub-Api-Version': '2022-11-28',
-												'User-Agent': 'portfolio',
-												'Accept': 'application/json'
-											},
-											success: function(data) {
-												$('#avatar').attr('src', data.avatar_url)
-												$('#bio').text(data.bio)
-											},
-											error: function() {
-												$('#avatar').attr('alt', 'Error loading avatar.')
-												$('#bio').text('Error loading bio. Please try again later.')
-											}
-										})
-									})
-								</script>
+          <p>
+            My journey into software engineering was anything but traditional.
+            After studying music in college and spending 16 years in the
+            mortgage industry, I realized I wanted to take on a more analytical,
+            problem-solving role. A friend suggested I explore software
+            development, and after some thought, it felt like the perfect fit. I
+            decided to make a career shift, enrolling in the Turing School of
+            Software & Design, followed by a Fast Track program to further
+            develop my skills.
+          </p>
+          <p>
+            Since then, I’ve specialized in full-stack development, gaining
+            hands-on experience with Ruby on Rails, Java, JavaScript, and more.
+            From contributing to open-source projects to working on a MERN stack
+            app at a startup, I’ve grown as a developer through real-world
+            problem-solving. Outside of coding, I sing with the Tucson Symphony
+            Orchestra, follow college sports, and love cooking and traveling
+            with my wife. My experiences have shaped me into a creative,
+            well-rounded developer ready for new challenges.
+          </p>
+        </section>
+      </div>
 
-								<p>My journey into software engineering was anything but traditional. After studying music in college and spending 16 years in the mortgage industry, I realized I wanted to take on a more analytical, problem-solving role. A friend suggested I explore software development, and after some thought, it felt like the perfect fit. I decided to make a career shift, enrolling in the Turing School of Software & Design, followed by a Fast Track program to further develop my skills.</p>
-								<p>Since then, I’ve specialized in full-stack development, gaining hands-on experience with Ruby on Rails, Java, JavaScript, and more. From contributing to open-source projects to working on a MERN stack app at a startup, I’ve grown as a developer through real-world problem-solving. Outside of coding, I sing with the Tucson Symphony Orchestra, follow college sports, and love cooking and traveling with my wife. My experiences have shaped me into a creative, well-rounded developer ready for new challenges.</p>
-							</section>
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="https://formspree.io/f/mrbzvbyy">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Tucson, AZ</p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="mailto:gabriel.c.nunez@gmail.com">gabriel.c.nunez@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Resume</h3>
-								<p><a href="/assets/resume/gabe-nunez-ft-resume.pdf" download="Gabe Nunez Resume">Download PDF</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<!-- <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+      <!-- Footer -->
+      <footer id="footer">
+        <section>
+          <form id="emailForm" method="post" action="https://formspree.io/f/mrbzvbyy">
+            <div class="fields">
+              <div class="field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="3"></textarea>
+              </div>
+            </div>
+            <ul class="actions">
+              <li>
+                <input
+                  type="button"
+                  onclick="emailForm()"
+                  value="Send Message"
+                />
+              </li>
+            </ul>
+          </form>
+        </section>
+        <section class="split contact">
+          <section class="alt">
+            <h3>Address</h3>
+            <p>Tucson, AZ</p>
+          </section>
+          <section>
+            <h3>Email</h3>
+            <p>
+              <a href="mailto:gabriel.c.nunez@gmail.com"
+                >gabriel.c.nunez@gmail.com</a
+              >
+            </p>
+          </section>
+          <section>
+            <h3>Resume</h3>
+            <p>
+              <a
+                href="/assets/resume/gabe-nunez-ft-resume.pdf"
+                download="Gabe Nunez Resume"
+                >Download PDF</a
+              >
+            </p>
+          </section>
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <!-- <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-									<li><a href="https://www.linkedin.com/in/gabriel-nunez-az/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://github.com/gabrielcnunez" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/gabriel-nunez-az/"
+                  target="_blank"
+                  class="icon brands fa-linkedin"
+                  ><span class="label">LinkedIn</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/gabrielcnunez"
+                  target="_blank"
+                  class="icon brands fa-github"
+                  ><span class="label">GitHub</span></a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+      </footer>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul>
-							<li>&copy; Black Lodge Development, LLC</li>
-							<!-- <li>Design: <a href="https://html5up.net">HTML5 UP</a></li> -->
-						</ul>
-					</div>
+      <!-- Copyright -->
+      <div id="copyright">
+        <ul>
+          <li>&copy; Black Lodge Development, LLC</li>
+          <!-- <li>Design: <a href="https://html5up.net">HTML5 UP</a></li> -->
+        </ul>
+      </div>
+    </div>
 
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
